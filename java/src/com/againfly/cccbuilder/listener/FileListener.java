@@ -30,6 +30,14 @@ public class FileListener implements Runnable{
                 }
                 for (String path: listenFiles){
                     File temp = new File(path);
+
+                    if(!temp.exists()){
+                        System.out.println("监听到文件被移除:" + path);
+                        System.out.println("重新刷新");
+                        init();
+                        break;
+                    }
+
                     long time = temp.lastModified();
                     if(modifyTimes.get(path) == time){
                         continue;
