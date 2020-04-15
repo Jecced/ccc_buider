@@ -33,8 +33,8 @@ public class FileUtil {
     }
 
     public static String fileRead(String path) {
+        File file = new File(path);
         try{
-            File file = new File(path);
             FileReader reader = new FileReader(file);
             BufferedReader bReader = new BufferedReader(reader);
             StringBuilder sb = new StringBuilder();

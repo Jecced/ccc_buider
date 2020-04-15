@@ -27,19 +27,18 @@ public class FileDisplay {
             "        })();";
 
 
-    private static final String basePath = Main.listenPath;
+//    private static final String basePath = Main.listenPath;
 
-    private static final String tempPath = Main.tempPath;
+//    private static final String tempPath = Main.tempPath;
 
-    private static final String descPath = Main.descPath;
+//    private static final String descPath = Main.descPath;
 
 
     public static void display(String filePath){
         long time = System.currentTimeMillis();
         String name = getFileName(filePath);
 
-        String outJsPath = filePath.replace(basePath, descPath).replace(".ts",".js");
-
+        String outJsPath = filePath.replace(Main.listenPath, Main.descPath).replace(".ts",".js");
 
         String uuid = getUuid(outJsPath);
 
@@ -49,7 +48,7 @@ public class FileDisplay {
         }
 
 
-        String newTs = tempPath + name + ".ts";
+        String newTs = Main.tempPath + name + ".ts";
 
         FileUtil.fileCopy(filePath, newTs);
 
@@ -70,7 +69,7 @@ public class FileDisplay {
         String sbTop = sbTopB.toString();
         sbTop = sbTop.replace("___s_uuid___", uuid)
                 .replace("___name___", name.replace(".js", ""))
-                .replace("___abs_path___", filePath.replace(basePath, "").replace(".ts", ".js"));
+                .replace("___abs_path___", filePath.replace(Main.listenPath, "").replace(".ts", ".js"));
 
         jsContent = sbTop + jsContent + bot;
 
