@@ -24,13 +24,13 @@
 
 #### 脚本类型
 
-- 没有注解的`ts`脚本
-- 有`@property`注解的`ts`脚本
+- 没有注解的 `ts `脚本
+- 有 `@property `注解的 `ts` 脚本
 
 #### 暂未支持
 
 - `windows` 环境尚未测试, 未测试`目录系统`处理和`换行符`是否会出问题
-- `js`脚本尚未监听
+- `js` 脚本尚未监听
 
 ---
 
@@ -72,6 +72,73 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
 
 
 
+## 怎么使用 How to use
+
+```bash
+java -jar ccc_builder_xxx.jar <project_path>
+```
+
+或者
+
+```bash
+java com.againfly.cccbuilder.Main <project_path>
+```
+
+参数解释:
+
+- project_path 为cocos项目的根目录, 可以不填该参数, 不填入参数时, 启动会提示询问你的项目目录位置在哪
+
+例如
+
+```bash
+java -jar ccc_builder_0.0.4.jar /Users/ankang/git/saisheng/slgrpg 
+```
+
+
+
+目前脚本支持命令:
+
+- `update` or `u` 通知cocos进行脚本进行全量编译
+-  `flash`  or `f` 刷新所有监听的脚本
+
+例如:
+
+```bash
+>> java -jar ccc_builder_0.0.4.jar
+<< start cmd listener
+<< 请输入路径项目路径:
+>> /Users/xxx/git/xxx/xxx 
+<< listener file flush success, file count:789
+<< init success
+<< start file listener
+>> flush
+<< listener file flush success, file count:789
+```
+
+- 运行jar包 `java -jar ccc_builder_0.0.4.jar`
+- 输入项目路径 `/Users/xxx/git/xxx/xxx`
+- 手动刷新监听目录 `flush`
+
+
+
+正常运行时: 
+
+```bash
+>> java -jar ccc_builder_0.0.4.jar /Users/ankang/git/saisheng/slgrpg 
+<< start cmd listener
+<< listener file flush success, file count:789
+<< init success
+<< start file listener
+<< /Users/ankang/git/saisheng/slgrpg/assets/script/feature/battle/BattleCtl.ts, file update
+<< BattleCtl->编译完成, 耗时:1636ms
+```
+
+当监听到ts脚本被保存时, 会打印出相应文件 update
+
+当顺利编译完成时, 会打印 `${文件名}->编译完成, 耗时: ${time}ms`
+
+
+
 ## TODO
 
 - 加入 `js` 脚本的变动监听, 目前项目开发没有使用`js`, 暂不支持 `js` 脚本的处理
@@ -80,7 +147,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
 - windows 环境尚未测试
 - 没有进行 `releases` 打包
 - 目前项目使用 `java` 语言进行编写, 后期可能会更改编写语言
-- 目前没有编写使用文档 `how to ues`
+- ~~目前没有编写使用文档 `how to ues`~~
 
 ---
 
