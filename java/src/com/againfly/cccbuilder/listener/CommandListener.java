@@ -13,19 +13,22 @@ public class CommandListener implements Runnable {
     public void run() {
         System.out.println("cmd model tsc...");
 
-        System.out.println("请输入路径项目路径:");
+
 
         InputStreamReader is = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(is);
         String cmd = null;
 
-        try {
-            String path = br.readLine();
-            path = path.trim();
-            Main.updateProjectPath(path);
-            new Thread(new FileListener()).start();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(!Main.initListener){
+            System.out.println("请输入路径项目路径:");
+            try {
+                String path = br.readLine();
+                path = path.trim();
+                Main.updateProjectPath(path);
+                new Thread(new FileListener()).start();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         while (true){
