@@ -34,7 +34,7 @@ public class FileListener implements Runnable{
                     if(modifyTimes.get(path) == time){
                         continue;
                     }
-                    System.out.println(temp.getAbsolutePath() + ", 文件更新");
+                    System.out.println(temp.getAbsolutePath() + ", file update");
                     modifyTimes.put(path, time);
 
                     FileDisplay.display(temp.getAbsolutePath());
