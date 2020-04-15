@@ -1,35 +1,23 @@
-package com.againfly.cccbuilder;
+package com.againfly.cccbuilder.listener;
 
-import java.io.BufferedReader;
+import com.againfly.cccbuilder.Main;
+import com.againfly.cccbuilder.display.FileDisplay;
+
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FileListener {
 
-//    public static final String projectPath = "/Users/ankang/NewProject/";
-    public static final String projectPath = "/Users/ankang/git/saisheng/slgrpg/";
-
-    public static final String listenPath =  projectPath + "assets/";
-
-    public static final String descPath = projectPath + "temp/quick-scripts/assets/";
-
-    public static final String tempPath = projectPath + "temp/temp-build/";
+public class FileListener implements Runnable{
 
     private static final List<String> listenFiles = new ArrayList<>();
 
     private static final Map<String, Long> modifyTimes = new HashMap<>();
 
-    public static void main(String args[]){
-
-
-
-//        System.exit(0);
-
+    @Override
+    public void run() {
         init();
         System.out.println("init success");
 
@@ -54,36 +42,17 @@ public class FileListener {
             }
         }).start();
         System.out.println("start listener");
-
-
-        System.out.println("cmd model run...");
-
-        InputStreamReader is = new InputStreamReader(System.in);
-        BufferedReader br = new BufferedReader(is);
-        String cmd = null;
-        while (true){
-            try {
-                if (null == (cmd = br.readLine())) break;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            cmd = cmd.trim();
-            if("flush".equalsIgnoreCase(cmd) || "f".equalsIgnoreCase(cmd)){
-                init();
-            }else{
-                System.out.println("无效命令, 刷新命令: f or flush");
-            }
-        }
     }
 
-    private static void init(){
-        File tempDir = new File(tempPath);
+
+    public static void init(){
+        File tempDir = new File(Main.tempPath);
         if(!tempDir.exists()){
             tempDir.mkdirs();
             System.out.println("临时编译目录已生成:" + tempDir.getAbsolutePath());
         }
 
-        File file = new File(listenPath);
+        File file = new File(Main.listenPath);
         listenFiles.clear();
         modifyTimes.clear();
 
@@ -98,7 +67,7 @@ public class FileListener {
     }
 
 
-    public static void flashFiles(File f, List<String> files){
+    private static void flashFiles(File f, List<String> files){
         if(f == null){
             return;
         }
@@ -116,4 +85,5 @@ public class FileListener {
             files.add(path);
         }
     }
+
 }

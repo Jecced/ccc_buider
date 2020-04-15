@@ -1,4 +1,7 @@
-package com.againfly.cccbuilder;
+package com.againfly.cccbuilder.display;
+
+import com.againfly.cccbuilder.Main;
+import com.againfly.cccbuilder.util.FileUtil;
 
 import java.io.*;
 
@@ -24,11 +27,11 @@ public class FileDisplay {
             "        })();";
 
 
-    private static final String basePath = FileListener.listenPath;
+    private static final String basePath = Main.listenPath;
 
-    private static final String tempPath = FileListener.tempPath;
+    private static final String tempPath = Main.tempPath;
 
-    private static final String descPath = FileListener.descPath;
+    private static final String descPath = Main.descPath;
 
 
     public static void display(String filePath){
@@ -48,12 +51,12 @@ public class FileDisplay {
 
         String newTs = tempPath + name + ".ts";
 
-        fileCopy(filePath, newTs);
+        FileUtil.fileCopy(filePath, newTs);
 
 
-        String js = run(newTs);
+        String js = tsc(newTs);
 
-        String jsContent = fileRead(js);
+        String jsContent = FileUtil.fileRead(js);
 
         if(null == jsContent){
             System.out.println("编译后的 js 获取失败:" + js);
@@ -96,11 +99,7 @@ public class FileDisplay {
 
         jsContent = sb.toString();
 
-
-
-
-
-        fileWrite(jsContent, outJsPath);
+        FileUtil.fileWrite(jsContent, outJsPath);
 
         System.out.println(name + "->编译完成, 耗时:" + (System.currentTimeMillis() - time) + "ms");
 
@@ -113,7 +112,7 @@ public class FileDisplay {
     }
 
     private static String getUuid(String path){
-        String orgJsContent = fileRead(path);
+        String orgJsContent = FileUtil.fileRead(path);
         if(null == orgJsContent){
             return null;
         }
@@ -122,12 +121,7 @@ public class FileDisplay {
         return  orgJsContent.substring(start, end);
     }
 
-    /**
-     * /Users/ankang/git/saisheng/slgrpg/temp/quick-scripts/assets/script/feature/battleoverride/card
-     * /Users/ankang/git/saisheng/slgrpg/temp/quick-scripts/assets/scriptfeature/battleoverride/card/
-     * tsc 编译文件
-     */
-    public static String run(String path){
+    private static String tsc(String path){
         Runtime rt = Runtime.getRuntime();
         Process ps = null;
         try {
@@ -136,9 +130,7 @@ public class FileDisplay {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-//        int i = ps.exitValue();
-        String jsPath = null;
-            jsPath = path.substring(0, path.lastIndexOf(".ts")) + ".js";
+        String jsPath = path.substring(0, path.lastIndexOf(".ts")) + ".js";
         if(null != ps){
             ps.destroy();
         }
@@ -146,68 +138,5 @@ public class FileDisplay {
     }
 
 
-    public static void fileCopy(String source, String dest) {
-        InputStream in = null;
-        OutputStream out = null;
-        try {
-            in = new FileInputStream(new File(source));
-            out = new FileOutputStream(new File(dest));
 
-            byte[] buffer = new byte[1024 * 10];
-            int len;
-
-            while ((len = in.read(buffer)) > 0) {
-                out.write(buffer, 0, len);
-            }
-        } catch (Exception e) {
-
-        } finally {
-            try{
-                in.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                out.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static String fileRead(String path) {
-        try{
-            File file = new File(path);
-            FileReader reader = new FileReader(file);
-            BufferedReader bReader = new BufferedReader(reader);
-            StringBuilder sb = new StringBuilder();
-            String s;
-            while ((s =bReader.readLine()) != null) {
-                sb.append(s + "\n");
-            }
-            bReader.close();
-            return sb.toString();
-        }catch (Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    public static void fileWrite(String text, String path){
-        FileWriter fwriter = null;
-        try {
-            fwriter = new FileWriter(path, false);
-            fwriter.write(text);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
-                fwriter.flush();
-                fwriter.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-
-    }
 }
