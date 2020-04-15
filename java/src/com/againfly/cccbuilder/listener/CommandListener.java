@@ -11,13 +11,10 @@ public class CommandListener implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("cmd model tsc...");
-
-
-
         InputStreamReader is = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(is);
         String cmd = null;
+        System.out.println("start cmd listener");
 
         if(!Main.initListener){
             System.out.println("请输入路径项目路径:");
