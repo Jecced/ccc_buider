@@ -1,5 +1,7 @@
 package com.againfly.cccbuilder.listener;
 
+import com.againfly.cccbuilder.util.HttpUtil;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,7 +24,11 @@ public class CommandListener implements Runnable {
             cmd = cmd.trim();
             if("flush".equalsIgnoreCase(cmd) || "f".equalsIgnoreCase(cmd)){
                 FileListener.init();
-            }else{
+            }if("update".equalsIgnoreCase(cmd) || "u".equalsIgnoreCase(cmd)){
+                System.out.println(HttpUtil.get("http://localhost:7456/update-db"));
+            }
+
+            else{
                 System.out.println("无效命令, 刷新命令: f or flush");
             }
         }
