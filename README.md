@@ -46,6 +46,11 @@
 
 ---
 
+## 效果预览图
+![](https://raw.githubusercontent.com/Jecced/ccc_buider/master/image/demo_preview.gif)
+
+![](https://raw.githubusercontent.com/Jecced/ccc_buider/master/image/demo_preview_small.gif)
+
 
 
 ## 依赖
