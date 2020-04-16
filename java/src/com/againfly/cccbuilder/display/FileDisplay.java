@@ -7,6 +7,7 @@ import java.io.*;
 
 public class FileDisplay {
 
+    private static final String NEXT_LINE = System.getProperty("line.separator");
     private static final String top = "(function() {\"use strict\";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/___abs_path___';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {\"use strict\";\n" +
             "cc._RF.push(module, '___s_uuid___', '___name___', __filename);\n" +
             "// script/Game.ts\n" +
@@ -87,7 +88,7 @@ public class FileDisplay {
             if(null == line) continue;
 
             if(!line.contains(".prototype, \"")){
-                sb.append(line).append("\n");
+                sb.append(line).append(NEXT_LINE);
                 continue;
             }
 
