@@ -46,6 +46,7 @@ public class FileListener implements Runnable{
                     if(modifyTimes.get(path) == time){
                         continue;
                     }
+                    System.out.println();
                     System.out.println(temp.getAbsolutePath() + ", file update");
                     modifyTimes.put(path, time);
 
@@ -63,6 +64,8 @@ public class FileListener implements Runnable{
             tempDir.mkdirs();
             System.out.println("临时编译目录已生成:" + tempDir.getAbsolutePath());
         }
+
+        System.out.println("开始监听: " + Main.listenPath);
 
         File file = new File(Main.listenPath);
         listenFiles.clear();
