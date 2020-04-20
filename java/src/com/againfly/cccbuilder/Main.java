@@ -74,11 +74,16 @@ public class Main {
 
         String nextLine = System.getProperty("line.separator");
 
-        listenPath = listenPath.replaceAll("/", java.io.File.separator);
-        descPath = descPath.replaceAll("/", java.io.File.separator);
-        tempPath = tempPath.replaceAll("/", java.io.File.separator);
+        if(isWin){
 
-        top = top.replaceAll("\\n", nextLine);
-        bot = bot.replaceAll("\\n", nextLine);
+            listenPath = listenPath.replaceAll("/", "\\\\");
+            descPath = descPath.replaceAll("/", "\\\\");
+            tempPath = tempPath.replaceAll("/", "\\\\");
+
+            top = top.replaceAll("\\n", nextLine);
+            bot = bot.replaceAll("\\n", nextLine);
+        }
     }
+
+
 }

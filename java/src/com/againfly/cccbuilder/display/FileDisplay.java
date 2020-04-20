@@ -51,9 +51,13 @@ public class FileDisplay {
 
         StringBuilder sbTopB = new StringBuilder(Main.top);
         String sbTop = sbTopB.toString();
+
+        String absPath = filePath.replace(Main.listenPath, "").replace(".ts", ".js");
+        absPath = absPath.replaceAll("\\\\","/");
+
         sbTop = sbTop.replace("___s_uuid___", uuid)
                 .replace("___name___", name.replace(".js", ""))
-                .replace("___abs_path___", filePath.replace(Main.listenPath, "").replace(".ts", ".js"));
+                .replace("___abs_path___", absPath);
 
         jsContent = sbTop + jsContent + Main.bot;
 
@@ -93,7 +97,13 @@ public class FileDisplay {
     }
 
     private static String getFileName(String path){
-        return path.substring(path.lastIndexOf("/") + 1, path.lastIndexOf("."));
+        File file = new File(path);
+        if(file.exists()){
+            String name = file.getName();
+            return name.substring(0, name.lastIndexOf("."));
+        }
+        return null;
+//        return path.substring(path.lastIndexOf("/") + 1, path.lastIndexOf("."));
     }
 
     private static String getUuid(String path){
@@ -107,14 +117,22 @@ public class FileDisplay {
     }
 
     private static String tsc(String path){
+//        final ProcessBuilder pb = new ProcessBuilder("powershell","tsc", path);
+//        try {
+//            final Process p = pb.start();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
         Runtime rt = Runtime.getRuntime();
         Process ps = null;
         try {
             if(Main.isWin){
-                ps = rt.exec("cmd /k tsc " + path);
+                ps = rt.exec("powershell /k tsc " + path);
             }else{
                 ps = rt.exec("tsc " + path);
             }
+//            ps = rt.exec("powershell tsc " + path);
             ps.waitFor();
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
