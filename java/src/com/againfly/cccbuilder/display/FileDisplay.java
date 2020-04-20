@@ -9,24 +9,6 @@ import java.io.*;
 public class FileDisplay {
 
     private static final String NEXT_LINE = System.getProperty("line.separator");
-    private static final String top = "(function() {\"use strict\";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/___abs_path___';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {\"use strict\";\n" +
-            "cc._RF.push(module, '___s_uuid___', '___name___', __filename);\n" +
-            "// script/Game.ts\n" +
-            "\n" +
-            "Object.defineProperty(exports, \"__esModule\", { value: true });";
-
-    private static final String bot = "\n" +
-            "cc._RF.pop();\n" +
-            "        }\n" +
-            "        if (CC_EDITOR) {\n" +
-            "            __define(__module.exports, __require, __module);\n" +
-            "        }\n" +
-            "        else {\n" +
-            "            cc.registerModuleFunc(__filename, function () {\n" +
-            "                __define(__module.exports, __require, __module);\n" +
-            "            });\n" +
-            "        }\n" +
-            "        })();";
 
 
 //    private static final String basePath = Main.listenPath;
@@ -67,13 +49,13 @@ public class FileDisplay {
         int topSub = jsContent.indexOf("exports.__esModule = true;") + "exports.__esModule = true;".length();
         jsContent = jsContent.substring(topSub);
 
-        StringBuilder sbTopB = new StringBuilder(FileDisplay.top);
+        StringBuilder sbTopB = new StringBuilder(Main.top);
         String sbTop = sbTopB.toString();
         sbTop = sbTop.replace("___s_uuid___", uuid)
                 .replace("___name___", name.replace(".js", ""))
                 .replace("___abs_path___", filePath.replace(Main.listenPath, "").replace(".ts", ".js"));
 
-        jsContent = sbTop + jsContent + bot;
+        jsContent = sbTop + jsContent + Main.bot;
 
 
         ByteArrayInputStream is=new ByteArrayInputStream(jsContent.getBytes());
@@ -128,7 +110,11 @@ public class FileDisplay {
         Runtime rt = Runtime.getRuntime();
         Process ps = null;
         try {
-            ps = rt.exec("tsc " + path);
+            if(Main.isWin){
+                ps = rt.exec("cmd /k tsc " + path);
+            }else{
+                ps = rt.exec("tsc " + path);
+            }
             ps.waitFor();
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
@@ -139,7 +125,6 @@ public class FileDisplay {
         }
         return jsPath;
     }
-
 
 
 }
