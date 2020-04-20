@@ -93,6 +93,11 @@ public class DepsListener{
 
         ScriptDeps sd = nameDepsCache.get(name);
 
+        if(null == sd){
+            System.err.println("当前文件依赖查询失败: " + name + ", 可能是新文件");
+            return;
+        }
+
 
         Map<String, Integer> deps = sd.getDeps();
 
@@ -122,15 +127,14 @@ public class DepsListener{
             ScriptDeps depsInfo = nameDepsCache.get(depsName);
 
             if(null == depsInfo){
-                System.err.println("can't found deps : "+depsName);
+                System.err.println("依赖获取失败 : " + depsName);
                 continue;
             }
 
             deps.put(require, depsInfo.getIndex());
         }
 
-        System.out.println(sd);
-        System.out.println("依赖更新:" + name);
+        System.out.println("依赖更新:" + name + "\n" + deps);
     }
 
 }

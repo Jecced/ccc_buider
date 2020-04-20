@@ -61,8 +61,9 @@ public class Main {
 
 //        new Thread(new FileListener()).start();
 
-        new Thread(new CommandListener()).start();
         new Thread(new HttpServer()).start();
+
+        new Thread(new CommandListener()).start();
     }
 
     public static void updateProjectPath(String path) {

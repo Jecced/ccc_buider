@@ -1,6 +1,5 @@
 package com.againfly.server;
 
-import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetAddress;
@@ -8,22 +7,16 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class HttpServer implements Runnable{
-    /**
-     * WEB_ROOT is the directory where our html and other files reside.
-     * For this package,WEB_ROOT is the "webroot" directory under the
-     * working directory.
-     * the working directory is the location in the file system
-     * from where the java command was invoke.
-     */
-    public static final String WEB_ROOT = System.getProperty("user.dir") + File.separator + "webroot";
-
-    private boolean shutdown = false;
+//    public static final String WEB_ROOT = System.getProperty("user.dir") + File.separator + "webroot";
 
     @Override
     public void run() {
+        System.out.println("#######################################################################################\n");
         System.out.println("需要在index.jade中加入一行:");
         System.out.println("script(type='text/javascript' charset='utf-8' src='http://localhost:8059/deps.js')");
         System.out.println("这行需要放在settings.js脚本的下一行");
+        System.out.println();
+        System.out.println("#######################################################################################\n");
         HttpServer server = new HttpServer();
         server.await();
     }
@@ -37,7 +30,7 @@ public class HttpServer implements Runnable{
             e.printStackTrace();
             System.exit(0);
         }
-        while (!shutdown) {
+        while (true) {
             Socket socket = null;
             InputStream input = null;
             OutputStream output = null;
@@ -54,7 +47,6 @@ public class HttpServer implements Runnable{
                 response.sendStaticResource();
             } catch (Exception e) {
                 e.printStackTrace();
-                continue;
             }
         }
     }
