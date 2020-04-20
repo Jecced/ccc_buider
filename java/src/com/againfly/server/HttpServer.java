@@ -21,6 +21,9 @@ public class HttpServer implements Runnable{
 
     @Override
     public void run() {
+        System.out.println("需要在index.jade中加入一行:");
+        System.out.println("script(type='text/javascript' charset='utf-8' src='http://localhost:8059/deps.js')");
+        System.out.println("这行需要放在settings.js脚本的下一行");
         HttpServer server = new HttpServer();
         server.await();
     }
