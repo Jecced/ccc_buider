@@ -175,6 +175,20 @@ java -jar ccc_builder_0.0.4.jar /Users/ankang/git/saisheng/slgrpg
 - 初始项目建立
 - 支持非注解脚本的自动编译
 
+
+
+### 2020-04-20
+
+- 加入依赖更新功能
+
+  需要在 CocosCreator客户端中的模板预览文件 `index.jade`中加入一行:
+
+  `script(type='text/javascript' charset='utf-8' src='http://localhost:8059/deps.js')`
+
+  动态编译出来的脚本依赖信息由工具动态生成, 避免造成动态生成的脚本, 缺少依赖问题
+
+
+
 ---
 
 
