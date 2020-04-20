@@ -1,10 +1,9 @@
 <component name="ArtifactManager">
-  <artifact name="java:jar">
+  <artifact type="jar" name="java:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/java_jar</output-path>
-    <root id="root">
-      <element id="archive" name="java.jar">
-        <element id="module-output" name="java" />
-      </element>
+    <root id="archive" name="java.jar">
+      <element id="module-output" name="java" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/deps/fastjson-1.2.68.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

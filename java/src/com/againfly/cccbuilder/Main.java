@@ -1,7 +1,9 @@
 package com.againfly.cccbuilder;
 
 import com.againfly.cccbuilder.listener.CommandListener;
+import com.againfly.cccbuilder.listener.DepsListener;
 import com.againfly.cccbuilder.listener.FileListener;
+import com.againfly.server.HttpServer;
 
 import java.io.File;
 
@@ -19,6 +21,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        DepsListener.flushCocosSettingsDeps();
 
         if(args.length >= 1){
             String path = args[0].trim();
@@ -33,6 +36,7 @@ public class Main {
 //        new Thread(new FileListener()).start();
 
         new Thread(new CommandListener()).start();
+        new Thread(new HttpServer()).start();
     }
 
     public static void updateProjectPath(String path) {

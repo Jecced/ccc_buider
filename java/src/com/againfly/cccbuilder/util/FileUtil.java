@@ -1,6 +1,9 @@
 package com.againfly.cccbuilder.util;
 
 import java.io.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class FileUtil {
     public static void fileCopy(String source, String dest) {
@@ -66,5 +69,44 @@ public class FileUtil {
             }
         }
 
+    }
+
+    /**
+     * 递归查询某目录下的所有文件
+     */
+    public static void recursiveFiles(File f, List<String> files, Set<String> suffix){
+        if(f == null){
+            return;
+        }
+        if(f.isDirectory()){
+            File[] fileArray=f.listFiles();
+            if(fileArray==null){
+                return;
+            }
+            for (int i = 0; i < fileArray.length; i++) {
+                recursiveFiles(fileArray[i], files, suffix);
+            }
+        }else{
+            String path = f.getAbsolutePath();
+//            if(!path.endsWith(".ts")) return;
+
+            String name = f.getName();
+            String endfix = "";
+            int start = name.lastIndexOf(".");
+            if(-1 != start){
+                endfix = name.substring(start);
+            }
+
+            if(null == suffix){
+                return;
+            }
+            boolean has = suffix.contains(endfix);
+
+            if(!has){
+                return;
+            }
+
+            files.add(path);
+        }
     }
 }

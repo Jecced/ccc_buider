@@ -37,6 +37,7 @@ public class CommandListener implements Runnable {
             cmd = cmd.trim();
             if("flush".equalsIgnoreCase(cmd) || "f".equalsIgnoreCase(cmd)){
                 FileListener.init();
+                DepsListener.flushCocosSettingsDeps();
             }else if("update".equalsIgnoreCase(cmd) || "u".equalsIgnoreCase(cmd)){
                 System.out.println(HttpUtil.get("http://localhost:7456/update-db"));
                 FileListener.init();

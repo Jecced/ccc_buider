@@ -1,6 +1,7 @@
 package com.againfly.cccbuilder.display;
 
 import com.againfly.cccbuilder.Main;
+import com.againfly.cccbuilder.listener.DepsListener;
 import com.againfly.cccbuilder.util.FileUtil;
 
 import java.io.*;
@@ -102,6 +103,8 @@ public class FileDisplay {
         FileUtil.fileWrite(jsContent, outJsPath);
 
         System.out.println(name + "->编译完成, 耗时:" + (System.currentTimeMillis() - time) + "ms");
+
+        DepsListener.flushDepsInfo(js);
 
         new File(newTs).delete();
         new File(js).delete();

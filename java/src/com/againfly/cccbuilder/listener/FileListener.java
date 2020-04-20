@@ -2,12 +2,10 @@ package com.againfly.cccbuilder.listener;
 
 import com.againfly.cccbuilder.Main;
 import com.againfly.cccbuilder.display.FileDisplay;
+import com.againfly.cccbuilder.util.FileUtil;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class FileListener implements Runnable{
@@ -15,6 +13,12 @@ public class FileListener implements Runnable{
     private static final List<String> listenFiles = new ArrayList<>();
 
     private static final Map<String, Long> modifyTimes = new HashMap<>();
+
+    private static final Set<String> listenSuffix = new HashSet<>();
+
+    static {
+        listenSuffix.add(".ts");
+    }
 
     @Override
     public void run() {
@@ -64,7 +68,9 @@ public class FileListener implements Runnable{
         listenFiles.clear();
         modifyTimes.clear();
 
-        flashFiles(file, listenFiles);
+//        flashFiles(file, listenFiles);
+
+        FileUtil.recursiveFiles(file, listenFiles, listenSuffix);
 
         for(String path : listenFiles){
             File temp = new File(path);
@@ -75,23 +81,23 @@ public class FileListener implements Runnable{
     }
 
 
-    private static void flashFiles(File f, List<String> files){
-        if(f == null){
-            return;
-        }
-        if(f.isDirectory()){
-            File[] fileArray=f.listFiles();
-            if(fileArray==null){
-                return;
-            }
-            for (int i = 0; i < fileArray.length; i++) {
-                flashFiles(fileArray[i], files);
-            }
-        }else{
-            String path = f.getAbsolutePath();
-            if(!path.endsWith(".ts")) return;
-            files.add(path);
-        }
-    }
+//    private static void flashFiles(File f, List<String> files){
+//        if(f == null){
+//            return;
+//        }
+//        if(f.isDirectory()){
+//            File[] fileArray=f.listFiles();
+//            if(fileArray==null){
+//                return;
+//            }
+//            for (int i = 0; i < fileArray.length; i++) {
+//                flashFiles(fileArray[i], files);
+//            }
+//        }else{
+//            String path = f.getAbsolutePath();
+//            if(!path.endsWith(".ts")) return;
+//            files.add(path);
+//        }
+//    }
 
 }

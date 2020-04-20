@@ -7,7 +7,7 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class HttpServer {
+public class HttpServer implements Runnable{
     /**
      * WEB_ROOT is the directory where our html and other files reside.
      * For this package,WEB_ROOT is the "webroot" directory under the
@@ -19,8 +19,8 @@ public class HttpServer {
 
     private boolean shutdown = false;
 
-    public static void main(String[] args) {
-        System.out.println(WEB_ROOT);
+    @Override
+    public void run() {
         HttpServer server = new HttpServer();
         server.await();
     }
@@ -55,4 +55,5 @@ public class HttpServer {
             }
         }
     }
+
 }
