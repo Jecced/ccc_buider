@@ -75,14 +75,24 @@ public class Main {
         String nextLine = System.getProperty("line.separator");
 
         if(isWin){
-
-            listenPath = listenPath.replaceAll("/", "\\\\");
-            descPath = descPath.replaceAll("/", "\\\\");
-            tempPath = tempPath.replaceAll("/", "\\\\");
+//            listenPath = listenPath.replaceAll("/", "\\\\");
+//            descPath = descPath.replaceAll("/", "\\\\");
+//            tempPath = tempPath.replaceAll("/", "\\\\");
 
             top = top.replaceAll("\\n", nextLine);
             bot = bot.replaceAll("\\n", nextLine);
         }
+
+        projectPath = new File(projectPath).getAbsolutePath();
+        listenPath = new File(listenPath).getAbsolutePath();
+        descPath = new File(descPath).getAbsolutePath();
+        tempPath = new File(tempPath).getAbsolutePath();
+
+        System.out.println("更新路径:");
+        System.out.println("项目路径:" + projectPath);
+        System.out.println("监听路径:" + listenPath);
+        System.out.println("输出路径:" + descPath);
+        System.out.println("临时路径:" + tempPath);
     }
 
 

@@ -32,7 +32,10 @@ public class FileDisplay {
         }
 
 
-        String newTs = Main.tempPath + name + ".ts";
+        String newTs = Main.tempPath + "/" + name + ".ts";
+        newTs = new File(newTs).getAbsolutePath();
+
+        System.out.println("拷贝ts到临时目录:" + newTs);
 
         FileUtil.fileCopy(filePath, newTs);
 
@@ -128,7 +131,7 @@ public class FileDisplay {
         Process ps = null;
         try {
             if(Main.isWin){
-                ps = rt.exec("powershell /k tsc " + path);
+                ps = rt.exec("powershell tsc " + path);
             }else{
                 ps = rt.exec("tsc " + path);
             }
@@ -141,6 +144,8 @@ public class FileDisplay {
         if(null != ps){
             ps.destroy();
         }
+
+        System.out.println("生成编译JS文件:" + jsPath);
         return jsPath;
     }
 
