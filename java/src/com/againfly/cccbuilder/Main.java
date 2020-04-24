@@ -48,6 +48,19 @@ public class Main {
         String os = System.getProperty("os.name").toLowerCase();
         isWin = os.startsWith("win");
 
+        System.out.println("=====");
+
+//        String dirPath = System.getProperty("user.dir");
+        String dirPath = getPath();
+        System.out.println(dirPath);
+        System.out.println("======");
+        File assetsDir = new File(dirPath + "/assets");
+
+        if(args.length == 0 && assetsDir.exists() && assetsDir.isDirectory()){
+            System.out.println("检测到当前目录为cocos 项目目录");
+            System.out.println(dirPath);
+            args = new String[]{dirPath};
+        }
 
         DepsListener.flushCocosSettingsDeps();
 
@@ -69,6 +82,18 @@ public class Main {
 
         //启动socket监听线程
         ClientHttp.run();
+    }
+
+    public static String getPath() {
+        String path = Main.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        if(System.getProperty("os.name").contains("dows")){
+            path = path.substring(1,path.length());
+        }
+        if(path.contains("jar")){
+            path = path.substring(0,path.lastIndexOf("."));
+            return path.substring(0,path.lastIndexOf("/"));
+        }
+        return path.replace("target/classes/", "");
     }
 
     public static void updateProjectPath(String path) {
