@@ -10,14 +10,6 @@ public class FileDisplay {
 
     private static final String NEXT_LINE = System.getProperty("line.separator");
 
-
-//    private static final String basePath = Main.listenPath;
-
-//    private static final String tempPath = Main.tempPath;
-
-//    private static final String descPath = Main.descPath;
-
-
     public static void display(String filePath){
         long time = System.currentTimeMillis();
         String name = getFileName(filePath);
@@ -57,7 +49,8 @@ public class FileDisplay {
 
         String absPath = filePath.replace(Main.listenPath, "").replace(".ts", ".js");
         absPath = absPath.replaceAll("\\\\","/");
-
+//        absPath = absPath.replaceAll("//", "/");
+        absPath = absPath.substring(1);
         sbTop = sbTop.replace("___s_uuid___", uuid)
                 .replace("___name___", name.replace(".js", ""))
                 .replace("___abs_path___", absPath);

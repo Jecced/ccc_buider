@@ -7,29 +7,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87b32783-3a63-4b0f-8546-2da584b96acf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/againfly/cccbuilder/entity/ScriptDeps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/DepsListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deps/Java-WebSocket-1.4.1-with-dependencies.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deps/netty-all-4.1.48.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/againfly/websocket/client/ClientHttp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/againfly/websocket/client/ClientMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/againfly/websocket/client/WebSocketClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/againfly/websocket/server/ServerMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/againfly/websocket/server/WebSocketChannelInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/againfly/websocket/server/WebSocketHandle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/java_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/java_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/againfly/cccbuilder/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/againfly/cccbuilder/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/againfly/cccbuilder/display/FileDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/againfly/cccbuilder/display/FileDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/CommandListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/CommandListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/FileListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/FileListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/againfly/cccbuilder/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/againfly/cccbuilder/util/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/againfly/server/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/againfly/server/HttpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/againfly/server/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/againfly/server/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/againfly/server/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/againfly/server/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/DepsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/DepsListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/againfly/cccbuilder/util/HttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/againfly/cccbuilder/util/HttpUtil.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -38,163 +38,55 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>cmd model tsc...</find>
-      <find>projectPath</find>
-      <find>uuid获取</find>
-      <find>err</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/CommandListener.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/FileDisplay.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/FileListener.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/util/HttpUtil.java" />
-        <option value="$PROJECT_DIR$/src/path.txt" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/path.txt" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/FileListener.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/util/FileUtil.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/entity/ScriptDeps.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/server/HttpServer.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/server/Response.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/server/Request.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/display/FileDisplay.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/DepsListener.java" />
-        <option value="$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/CommandListener.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="527" />
-    <option name="y" value="23" />
-    <option name="width" value="1709" />
-    <option name="height" value="1352" />
-  </component>
+  <component name="ProjectId" id="1anPPwqQtvLPVh4AZrXH1ytweKP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="againfly" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="againfly" type="462c0819:PsiDirectoryNode" />
-              <item name="cccbuilder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="againfly" type="462c0819:PsiDirectoryNode" />
-              <item name="cccbuilder" type="462c0819:PsiDirectoryNode" />
-              <item name="display" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="againfly" type="462c0819:PsiDirectoryNode" />
-              <item name="cccbuilder" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="againfly" type="462c0819:PsiDirectoryNode" />
-              <item name="cccbuilder" type="462c0819:PsiDirectoryNode" />
-              <item name="listener" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="againfly" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="webroot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="java" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587362143366" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587365969110" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/againfly/websocket" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/againfly/websocket/wuxinbo/websocket/client" />
+      <recent name="$PROJECT_DIR$/src/com/againfly/websocket" />
+      <recent name="$PROJECT_DIR$/deps" />
       <recent name="$PROJECT_DIR$/src/com/againfly/cccbuilder" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.againfly.websocket" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/againfly/websocket" />
+      <recent name="$PROJECT_DIR$/deps" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="DepsListener" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.againfly.cccbuilder.listener.DepsListener" />
+  <component name="RunManager" selected="Application.ClientHttp">
+    <configuration name="ClientHttp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.againfly.websocket.client.ClientHttp" />
       <module name="java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.againfly.cccbuilder.listener.*" />
+          <option name="PATTERN" value="com.againfly.websocket.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -202,38 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileListener" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.againfly.cccbuilder.listener.FileListener" />
+    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.againfly.websocket.client.ClientMain" />
       <module name="java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.againfly.cccbuilder.listener.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.againfly.cccbuilder.util.FileUtil" />
-      <module name="java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.againfly.cccbuilder.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HttpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.againfly.server.HttpServer" />
-      <module name="java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.againfly.server.*" />
+          <option name="PATTERN" value="com.againfly.websocket.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -244,27 +110,18 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.againfly.cccbuilder.Main" />
       <module name="java" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../../saisheng/slgrpg" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.FileListener" />
-      <item itemvalue="Application.HttpServer" />
-      <item itemvalue="Application.FileUtil" />
-      <item itemvalue="Application.DepsListener" />
-    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClientHttp" />
+        <item itemvalue="Application.ClientMain" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.DepsListener" />
-        <item itemvalue="Application.FileUtil" />
-        <item itemvalue="Application.HttpServer" />
-        <item itemvalue="Application.FileListener" />
       </list>
     </recent_temporary>
   </component>
@@ -282,309 +139,127 @@
       <workItem from="1586932485112" duration="1027000" />
       <workItem from="1587347956120" duration="3000" />
       <workItem from="1587347968730" duration="13948000" />
+      <workItem from="1587362430282" duration="389000" />
+      <workItem from="1587363583250" duration="2267000" />
+      <workItem from="1587366708439" duration="1040000" />
+      <workItem from="1587368368976" duration="38000" />
+      <workItem from="1587368421859" duration="63000" />
+      <workItem from="1587368500671" duration="167000" />
+      <workItem from="1587371654007" duration="5807000" />
+      <workItem from="1587432367185" duration="7410000" />
+      <workItem from="1587521274774" duration="3754000" />
+      <workItem from="1587525182093" duration="8711000" />
+      <workItem from="1587540313809" duration="766000" />
+      <workItem from="1587614936286" duration="5439000" />
+      <workItem from="1587631956469" duration="2152000" />
+      <workItem from="1587637141349" duration="4388000" />
+      <workItem from="1587710010280" duration="852000" />
+      <workItem from="1587711260758" duration="3071000" />
+      <workItem from="1587714365845" duration="1642000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21546000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="527" y="23" width="1709" height="1352" extended-state="0" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24535093" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936507" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30555555" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.22301587" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32936507" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/cccbuilder/util/HttpUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="698" column="29" selection-start-line="698" selection-start-column="29" selection-end-line="698" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/cccbuilder/path.txt" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar!/jdk/nashorn/internal/parser/JSONParser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar!/com/oracle/javafx/jmx/json/JSONReader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/io/Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar!/com/oracle/javafx/jmx/json/impl/JSONStreamReaderImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/io/StringReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar!/com/oracle/javafx/jmx/json/JSONWriter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/io/StringWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="40" column="40" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/cccbuilder/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="94" column="46" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/java.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/server/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="52" column="28" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/server/Request.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/server/HttpServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/cccbuilder/entity/ScriptDeps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/CommandListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/cccbuilder/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/cccbuilder/display/FileDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="106" column="30" selection-start-line="106" selection-start-column="30" selection-end-line="106" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/DepsListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/againfly/cccbuilder/listener/FileListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor>
-            <show-content>
-              <type id="javaee-facet-resources" />
-              <type id="library" />
-              <type id="jpa-descriptors" />
-              <type id="artifact" />
-            </show-content>
-          </artifact-editor>
-          <last-edited>java:jar</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>java</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="WindowStateProjectService">
+    <state x="792" y="1681" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587540343384">
+      <screen x="488" y="1463" width="1680" height="1027" />
+    </state>
+    <state x="463" y="310" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1353@0.23.2560.1353" timestamp="1587391797937" />
+    <state x="792" y="1681" key="#com.intellij.execution.impl.EditConfigurationsDialog/488.1463.1680.1027/64.23.2496.1417@488.1463.1680.1027" timestamp="1587540343384" />
+    <state x="515" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog/64.23.2496.1417@64.23.2496.1417" timestamp="1587435595303" />
+    <state x="786" y="360" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1587375189073">
+      <screen x="0" y="23" width="2560" height="1353" />
+    </state>
+    <state x="786" y="360" key="#com.intellij.ide.macro.MacrosDialog/0.23.2560.1353@0.23.2560.1353" timestamp="1587375189073" />
+    <state x="1525" y="442" key="#com.intellij.ide.util.MemberChooser" timestamp="1587524654217">
+      <screen x="0" y="23" width="2560" height="1353" />
+    </state>
+    <state x="1525" y="442" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1353@0.23.2560.1353" timestamp="1587524654217" />
+    <state x="921" y="755" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587521887531">
+      <screen x="0" y="23" width="2560" height="1353" />
+    </state>
+    <state x="921" y="755" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.2560.1353@0.23.2560.1353" timestamp="1587521887531" />
+    <state x="513" y="534" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1587523805658">
+      <screen x="0" y="23" width="2560" height="1353" />
+    </state>
+    <state x="513" y="534" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.23.2560.1353@0.23.2560.1353" timestamp="1587523805658" />
+    <state x="413" y="578" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1587523548176">
+      <screen x="0" y="23" width="2560" height="1353" />
+    </state>
+    <state x="413" y="578" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.23.2560.1353@0.23.2560.1353" timestamp="1587523548176" />
+    <state width="1638" height="215" key="GridCell.Tab.0.bottom" timestamp="1587715710570">
+      <screen x="450" y="1463" width="1680" height="963" />
+    </state>
+    <state width="1470" height="196" key="GridCell.Tab.0.bottom/0.23.2560.1353@0.23.2560.1353" timestamp="1587538845710" />
+    <state width="1638" height="492" key="GridCell.Tab.0.bottom/450.1463.1680.1027/64.23.2496.1417@450.1463.1680.1027" timestamp="1587541452049" />
+    <state width="1098" height="461" key="GridCell.Tab.0.bottom/450.1463.1680.963/0.23.2560.1417@0.23.2560.1417" timestamp="1587710866240" />
+    <state width="1638" height="215" key="GridCell.Tab.0.bottom/450.1463.1680.963/0.23.2560.1417@450.1463.1680.963" timestamp="1587715710570" />
+    <state width="1137" height="209" key="GridCell.Tab.0.bottom/64.23.2496.1417@64.23.2496.1417" timestamp="1587470029482" />
+    <state width="1638" height="215" key="GridCell.Tab.0.center" timestamp="1587715710569">
+      <screen x="450" y="1463" width="1680" height="963" />
+    </state>
+    <state width="1470" height="196" key="GridCell.Tab.0.center/0.23.2560.1353@0.23.2560.1353" timestamp="1587538845709" />
+    <state width="1638" height="492" key="GridCell.Tab.0.center/450.1463.1680.1027/64.23.2496.1417@450.1463.1680.1027" timestamp="1587541452049" />
+    <state width="1098" height="461" key="GridCell.Tab.0.center/450.1463.1680.963/0.23.2560.1417@0.23.2560.1417" timestamp="1587710866239" />
+    <state width="1638" height="215" key="GridCell.Tab.0.center/450.1463.1680.963/0.23.2560.1417@450.1463.1680.963" timestamp="1587715710569" />
+    <state width="1137" height="209" key="GridCell.Tab.0.center/64.23.2496.1417@64.23.2496.1417" timestamp="1587470029482" />
+    <state width="1638" height="215" key="GridCell.Tab.0.left" timestamp="1587715710569">
+      <screen x="450" y="1463" width="1680" height="963" />
+    </state>
+    <state width="1470" height="196" key="GridCell.Tab.0.left/0.23.2560.1353@0.23.2560.1353" timestamp="1587538845709" />
+    <state width="1638" height="492" key="GridCell.Tab.0.left/450.1463.1680.1027/64.23.2496.1417@450.1463.1680.1027" timestamp="1587541452048" />
+    <state width="1098" height="461" key="GridCell.Tab.0.left/450.1463.1680.963/0.23.2560.1417@0.23.2560.1417" timestamp="1587710866239" />
+    <state width="1638" height="215" key="GridCell.Tab.0.left/450.1463.1680.963/0.23.2560.1417@450.1463.1680.963" timestamp="1587715710569" />
+    <state width="1137" height="209" key="GridCell.Tab.0.left/64.23.2496.1417@64.23.2496.1417" timestamp="1587470029481" />
+    <state width="1638" height="215" key="GridCell.Tab.0.right" timestamp="1587715710570">
+      <screen x="450" y="1463" width="1680" height="963" />
+    </state>
+    <state width="1470" height="196" key="GridCell.Tab.0.right/0.23.2560.1353@0.23.2560.1353" timestamp="1587538845710" />
+    <state width="1638" height="492" key="GridCell.Tab.0.right/450.1463.1680.1027/64.23.2496.1417@450.1463.1680.1027" timestamp="1587541452049" />
+    <state width="1098" height="461" key="GridCell.Tab.0.right/450.1463.1680.963/0.23.2560.1417@0.23.2560.1417" timestamp="1587710866239" />
+    <state width="1638" height="215" key="GridCell.Tab.0.right/450.1463.1680.963/0.23.2560.1417@450.1463.1680.963" timestamp="1587715710570" />
+    <state width="1137" height="209" key="GridCell.Tab.0.right/64.23.2496.1417@64.23.2496.1417" timestamp="1587470029482" />
+    <state width="1638" height="215" key="GridCell.Tab.1.bottom" timestamp="1587715659238">
+      <screen x="450" y="1463" width="1680" height="963" />
+    </state>
+    <state width="1470" height="196" key="GridCell.Tab.1.bottom/0.23.2560.1353@0.23.2560.1353" timestamp="1587538845711" />
+    <state width="1638" height="215" key="GridCell.Tab.1.bottom/450.1463.1680.963/0.23.2560.1417@450.1463.1680.963" timestamp="1587715659238" />
+    <state width="1137" height="209" key="GridCell.Tab.1.bottom/64.23.2496.1417@64.23.2496.1417" timestamp="1587470029484" />
+    <state width="1638" height="215" key="GridCell.Tab.1.center" timestamp="1587715659238">
+      <screen x="450" y="1463" width="1680" height="963" />
+    </state>
+    <state width="1470" height="196" key="GridCell.Tab.1.center/0.23.2560.1353@0.23.2560.1353" timestamp="1587538845711" />
+    <state width="1638" height="215" key="GridCell.Tab.1.center/450.1463.1680.963/0.23.2560.1417@450.1463.1680.963" timestamp="1587715659238" />
+    <state width="1137" height="209" key="GridCell.Tab.1.center/64.23.2496.1417@64.23.2496.1417" timestamp="1587470029483" />
+    <state width="1638" height="215" key="GridCell.Tab.1.left" timestamp="1587715659237">
+      <screen x="450" y="1463" width="1680" height="963" />
+    </state>
+    <state width="1470" height="196" key="GridCell.Tab.1.left/0.23.2560.1353@0.23.2560.1353" timestamp="1587538845710" />
+    <state width="1638" height="215" key="GridCell.Tab.1.left/450.1463.1680.963/0.23.2560.1417@450.1463.1680.963" timestamp="1587715659237" />
+    <state width="1137" height="209" key="GridCell.Tab.1.left/64.23.2496.1417@64.23.2496.1417" timestamp="1587470029483" />
+    <state width="1638" height="215" key="GridCell.Tab.1.right" timestamp="1587715659238">
+      <screen x="450" y="1463" width="1680" height="963" />
+    </state>
+    <state width="1470" height="196" key="GridCell.Tab.1.right/0.23.2560.1353@0.23.2560.1353" timestamp="1587538845711" />
+    <state width="1638" height="215" key="GridCell.Tab.1.right/450.1463.1680.963/0.23.2560.1417@450.1463.1680.963" timestamp="1587715659238" />
+    <state width="1137" height="209" key="GridCell.Tab.1.right/64.23.2496.1417@64.23.2496.1417" timestamp="1587470029484" />
+    <state x="782" y="482" key="SettingsEditor" timestamp="1587524612138">
+      <screen x="0" y="23" width="2560" height="1353" />
+    </state>
+    <state x="782" y="482" key="SettingsEditor/0.23.2560.1353@0.23.2560.1353" timestamp="1587524612138" />
+    <state x="1650" y="433" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587530930580">
+      <screen x="0" y="23" width="2560" height="1353" />
+    </state>
+    <state x="1650" y="433" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.2560.1353@0.23.2560.1353" timestamp="1587530930580" />
+    <state x="1836" y="566" width="600" height="490" key="find.popup" timestamp="1587530934316">
+      <screen x="0" y="23" width="2560" height="1353" />
+    </state>
+    <state x="1836" y="566" width="600" height="490" key="find.popup/0.23.2560.1353@0.23.2560.1353" timestamp="1587530934316" />
+    <state x="955" y="1674" width="670" height="676" key="search.everywhere.popup" timestamp="1587712709372">
+      <screen x="450" y="1463" width="1680" height="963" />
+    </state>
+    <state x="955" y="1674" width="670" height="676" key="search.everywhere.popup/450.1463.1680.963/0.23.2560.1417@450.1463.1680.963" timestamp="1587712709372" />
   </component>
 </project>

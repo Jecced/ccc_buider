@@ -4,6 +4,7 @@ import com.againfly.cccbuilder.listener.CommandListener;
 import com.againfly.cccbuilder.listener.DepsListener;
 import com.againfly.cccbuilder.listener.FileListener;
 import com.againfly.server.HttpServer;
+import com.againfly.websocket.client.ClientHttp;
 
 import java.io.File;
 
@@ -43,6 +44,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+
         String os = System.getProperty("os.name").toLowerCase();
         isWin = os.startsWith("win");
 
@@ -64,6 +66,9 @@ public class Main {
         new Thread(new HttpServer()).start();
 
         new Thread(new CommandListener()).start();
+
+        //启动socket监听线程
+        ClientHttp.run();
     }
 
     public static void updateProjectPath(String path) {

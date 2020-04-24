@@ -10,10 +10,11 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/deps/fastjson-1.2.68.jar!/" />
+          <root url="file://$MODULE_DIR$/deps" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/deps" recursive="false" />
       </library>
     </orderEntry>
   </component>

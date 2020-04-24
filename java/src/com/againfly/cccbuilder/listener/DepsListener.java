@@ -60,10 +60,15 @@ public class DepsListener{
             String file = sd.getFile();
             String name = file.substring(file.lastIndexOf("/") + 1, file.lastIndexOf("."));
             name = name.toLowerCase();
+
             sd.setName(name);
             sd.setIndex(i);
             depsList.add(sd);
             nameDepsCache.put(name, sd);
+
+            if(file.contains("javascript-state-machine")){
+                nameDepsCache.put("javascript-state-machine", sd);
+            }
         }
 
         System.out.println("Cocos脚本依赖查询刷新完毕");
@@ -100,6 +105,8 @@ public class DepsListener{
 
 
         Map<String, Integer> deps = sd.getDeps();
+
+        System.out.println("依赖更新前:\n" + deps);
 
 
         deps.clear();
