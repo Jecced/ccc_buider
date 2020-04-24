@@ -189,6 +189,12 @@ java -jar ccc_builder_0.0.4.jar /Users/ankang/git/saisheng/slgrpg
 
 
 
+### 2020-04-24
+
+- 加入`websocket` 模块, 连接`CocosCreator` 客户端, 直接监听由客户端发出的刷新请求
+
+
+
 ---
 
 
