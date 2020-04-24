@@ -2,7 +2,6 @@ package com.againfly.server;
 
 import com.againfly.cccbuilder.listener.DepsListener;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -19,7 +18,7 @@ public class Response {
             this.output.write("Content-Type:text/html;charset=utf-8\r\n".getBytes());
             this.output.write("\r\n".getBytes());
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.toString());
         }
 
     }

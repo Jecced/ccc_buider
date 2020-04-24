@@ -47,6 +47,11 @@ public class DepsListener{
 
         String localSettings = HttpUtil.get("http://localhost:7456/settings.js");
 
+        if(null == localSettings){
+            System.out.println("请启动cocos 客户端 来刷新依赖信息");
+            return;
+        }
+
         int start = localSettings.indexOf("scripts: ") + "scripts: ".length();
         int end = localSettings.indexOf("rawAssets");
 

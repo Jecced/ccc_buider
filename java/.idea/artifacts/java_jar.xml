@@ -4,8 +4,7 @@
     <root id="archive" name="java.jar">
       <element id="module-output" name="java" />
       <element id="extracted-dir" path="$PROJECT_DIR$/deps/fastjson-1.2.68.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/deps/javax.websocket-client-api-1.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/deps/Java-WebSocket-1.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/deps/netty-all-4.1.48.Final.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

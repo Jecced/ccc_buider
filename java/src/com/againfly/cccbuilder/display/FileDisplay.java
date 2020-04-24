@@ -125,6 +125,7 @@ public class FileDisplay {
         try {
             if(Main.isWin){
                 ps = rt.exec("powershell tsc " + path);
+//                ps = rt.exec("cmd /c tsc " + path);
             }else{
                 ps = rt.exec("tsc " + path);
             }
@@ -134,9 +135,8 @@ public class FileDisplay {
             e.printStackTrace();
         }
         String jsPath = path.substring(0, path.lastIndexOf(".ts")) + ".js";
-        if(null != ps){
-            ps.destroy();
-        }
+        int exitValue = ps.exitValue();
+        ps.destroy();
 
         System.out.println("生成编译JS文件:" + jsPath);
         return jsPath;
