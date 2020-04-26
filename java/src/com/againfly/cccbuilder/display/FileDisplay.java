@@ -91,6 +91,7 @@ public class FileDisplay {
 
             new File(newTs).delete();
             new File(js).delete();
+            new File(newTs.substring(0, newTs.lastIndexOf("/"))).delete();
         }
         System.out.println("->编译完成, 耗时:" + (System.currentTimeMillis() - time) + "ms");
 
