@@ -1,3 +1,5 @@
 java/out/*
 
 *.class
+
+java/.idea/workspace.xml
