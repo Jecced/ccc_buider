@@ -111,7 +111,7 @@ public class DepsListener{
 
         Map<String, Integer> deps = sd.getDeps();
 
-        System.out.println("依赖更新前:\n" + deps);
+        System.out.println("依赖更新前:" + name + "\n" + deps);
 
 
         deps.clear();
@@ -146,7 +146,7 @@ public class DepsListener{
             deps.put(require, depsInfo.getIndex());
         }
 
-        System.out.println("依赖更新:" + name + "\n" + deps);
+        System.out.println("依赖更新后:" + name + "\n" + deps);
     }
 
 }

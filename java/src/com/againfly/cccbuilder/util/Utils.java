@@ -7,6 +7,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Utils {
@@ -47,6 +48,7 @@ public class Utils {
      * @return ts编译后的js文件路径列表
      */
     public static List<String> tsc(List<String> list){
+        if(null == list || 0 == list.size()) return Collections.emptyList();
         List<String> outJsList = new ArrayList<>();
         StringBuilder cmd = new StringBuilder();
         if(Main.isWin){
@@ -57,6 +59,8 @@ public class Utils {
             cmd.append(path).append(" ");
             outJsList.add(path.substring(0, path.lastIndexOf(".ts")) + ".js");
         }
+
+        System.out.println("Terminal Command:\n" + cmd.toString());
         Runtime rt = Runtime.getRuntime();
         Process ps = null;
         try {
@@ -67,6 +71,9 @@ public class Utils {
         }
         int exitValue = ps.exitValue();
         ps.destroy();
+
+        System.out.println("编译后文件列表");
+        outJsList.forEach(System.out::println);
 
         return outJsList;
     }

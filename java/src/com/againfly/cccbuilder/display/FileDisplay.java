@@ -85,13 +85,12 @@ public class FileDisplay {
 
             FileUtil.fileWrite(jsContent, outJsPath);
 
-            System.out.println(name + "->编译完成, 耗时:" + (System.currentTimeMillis() - time) + "ms");
-
             DepsListener.flushDepsInfo(js);
 
             new File(newTs).delete();
             new File(js).delete();
         }
+        System.out.println("->编译完成, 耗时:" + (System.currentTimeMillis() - time) + "ms");
 
 
 

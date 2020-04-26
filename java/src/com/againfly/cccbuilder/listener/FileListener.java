@@ -47,13 +47,16 @@ public class FileListener implements Runnable{
                     if(modifyTimes.get(path) == time){
                         continue;
                     }
-                    System.out.println();
-                    System.out.println(temp.getAbsolutePath() + ", file update");
+//                    System.out.println(temp.getAbsolutePath() + ", file update");
                     modifyTimes.put(path, time);
 
 //                    FileDisplay.display(temp.getAbsolutePath());
                     list.add(temp.getAbsolutePath());
                 }
+                if(0 == list.size()) continue;
+                System.out.println("待编译文件列表:");
+                list.forEach(System.out::println);
+
                 FileDisplay.multipleDisplay(list);
             }
         }).start();
