@@ -1,15 +1,106 @@
 package com.againfly.cccbuilder.display;
 
 import com.againfly.cccbuilder.Main;
+import com.againfly.cccbuilder.entity.FileInfo;
 import com.againfly.cccbuilder.listener.DepsListener;
 import com.againfly.cccbuilder.util.FileUtil;
+import com.againfly.cccbuilder.util.Utils;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileDisplay {
 
     private static final String NEXT_LINE = System.getProperty("line.separator");
 
+    /**
+     * 多文件处理
+     * @param filePathList 待处理的文件列表
+     */
+    public static void multipleDisplay(List<String> filePathList){
+        long time = System.currentTimeMillis();
+        List<FileInfo> list = new ArrayList<>();
+        List<String> newTsList = new ArrayList<>();
+        for(String filePath: filePathList){
+            FileInfo info = new FileInfo();
+            info.setFilePath(filePath);
+            String name = getFileName(filePath);
+            info.setName(name);
+            String outJsPath = filePath.replace(Main.listenPath, Main.descPath).replace(".ts",".js");
+            info.setOutJsPath(outJsPath);
+            String uuid = getUuid(outJsPath);
+            if(null == uuid){
+                System.out.println("uuid获取失败,没有对应已经编译的js文件,需要回到cocos进行编译生成uuid" + filePath);
+                continue;
+            }
+            info.setUuid(uuid);
+            String newTs = Main.tempPath + "/" + name + ".ts";
+            newTs = new File(newTs).getAbsolutePath();
+            info.setNewTs(newTs);
+
+            FileUtil.fileCopy(filePath, newTs);
+
+            newTsList.add(newTs);
+
+            list.add(info);
+        }
+
+        List<String> jsPathList = Utils.tsc(newTsList);
+        for(int i = 0, len = jsPathList.size(); i < len; i++){
+            String js = jsPathList.get(i);
+            FileInfo fileInfo = list.get(i);
+
+            String filePath = fileInfo.getFilePath();
+            String name = fileInfo.getName();
+            String uuid = fileInfo.getUuid();
+            String outJsPath = fileInfo.getOutJsPath();
+            String newTs = fileInfo.getNewTs();
+
+            String jsContent = FileUtil.fileRead(js);
+            fileInfo.setJsContent(jsContent);
+            if(null == jsContent){
+                System.out.println("编译后的 js 获取失败:" + js);
+                continue;
+            }
+
+            int topSub = jsContent.indexOf("exports.__esModule = true;") + "exports.__esModule = true;".length();
+            jsContent = jsContent.substring(topSub);
+
+            StringBuilder sbTopB = new StringBuilder(Main.top);
+            String sbTop = sbTopB.toString();
+
+            String absPath = filePath.replace(Main.listenPath, "").replace(".ts", ".js");
+            absPath = absPath.replaceAll("\\\\","/");
+//        absPath = absPath.replaceAll("//", "/");
+            absPath = absPath.substring(1);
+            sbTop = sbTop.replace("___s_uuid___", uuid)
+                    .replace("___name___", name.replace(".js", ""))
+                    .replace("___abs_path___", absPath);
+
+            jsContent = sbTop + jsContent + Main.bot;
+
+            jsContent = Utils.displayProperty(jsContent);
+
+
+            FileUtil.fileWrite(jsContent, outJsPath);
+
+            System.out.println(name + "->编译完成, 耗时:" + (System.currentTimeMillis() - time) + "ms");
+
+            DepsListener.flushDepsInfo(js);
+
+            new File(newTs).delete();
+            new File(js).delete();
+        }
+
+
+
+    }
+
+    /**
+     * 单文件处理
+     * @param filePath 待文件路径
+     */
     public static void display(String filePath){
         long time = System.currentTimeMillis();
         String name = getFileName(filePath);
@@ -113,13 +204,6 @@ public class FileDisplay {
     }
 
     private static String tsc(String path){
-//        final ProcessBuilder pb = new ProcessBuilder("powershell","tsc", path);
-//        try {
-//            final Process p = pb.start();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
         Runtime rt = Runtime.getRuntime();
         Process ps = null;
         try {
@@ -129,7 +213,6 @@ public class FileDisplay {
             }else{
                 ps = rt.exec("tsc " + path);
             }
-//            ps = rt.exec("powershell tsc " + path);
             ps.waitFor();
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
@@ -141,6 +224,8 @@ public class FileDisplay {
         System.out.println("生成编译JS文件:" + jsPath);
         return jsPath;
     }
+
+
 
 
 }

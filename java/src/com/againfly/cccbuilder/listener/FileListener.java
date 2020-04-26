@@ -32,6 +32,7 @@ public class FileListener implements Runnable{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                List<String> list = new ArrayList<>();
                 for (String path: listenFiles){
                     File temp = new File(path);
 
@@ -50,8 +51,10 @@ public class FileListener implements Runnable{
                     System.out.println(temp.getAbsolutePath() + ", file update");
                     modifyTimes.put(path, time);
 
-                    FileDisplay.display(temp.getAbsolutePath());
+//                    FileDisplay.display(temp.getAbsolutePath());
+                    list.add(temp.getAbsolutePath());
                 }
+                FileDisplay.multipleDisplay(list);
             }
         }).start();
         System.out.println("start file listener");

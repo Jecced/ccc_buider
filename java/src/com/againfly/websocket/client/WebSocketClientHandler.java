@@ -63,7 +63,7 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> 
                 //this.listener.onMessage(textFrame.text());
 //                System.out.println("TextWebSocketFrame");
                 String out = textFrame.text();
-                System.out.println("server:say "+ out);
+                System.out.println("server say:"+ out);
                 if("3probe".equalsIgnoreCase(out)){
                     ch.writeAndFlush(new TextWebSocketFrame("5"));
                 }

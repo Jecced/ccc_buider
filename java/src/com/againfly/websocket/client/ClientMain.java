@@ -39,7 +39,7 @@ public class ClientMain {
 
     public static void ping(){
         if(null == server) return;
-        System.out.println("client send: ping");
+        System.out.println("client send: 2");
         server.writeAndFlush(new TextWebSocketFrame("2"));
     }
 
