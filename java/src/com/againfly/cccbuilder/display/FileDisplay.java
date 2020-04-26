@@ -27,7 +27,9 @@ public class FileDisplay {
             info.setFilePath(filePath);
             String name = getFileName(filePath);
             info.setName(name);
-            String outJsPath = filePath.replace(Main.listenPath, Main.descPath).replace(".ts",".js");
+            String outJsPath = filePath
+                    .replace(Main.listenPath, Main.descPath)
+                    .replace(".ts",".js");
             info.setOutJsPath(outJsPath);
             String uuid = getUuid(outJsPath);
             if(null == uuid){
@@ -35,7 +37,7 @@ public class FileDisplay {
                 continue;
             }
             info.setUuid(uuid);
-            String newTs = Main.tempPath + "/" + name + ".ts";
+            String newTs = Main.tempPath + "/" + name + "/" + name + ".ts";
             newTs = new File(newTs).getAbsolutePath();
             info.setNewTs(newTs);
 

@@ -1,12 +1,20 @@
 package com.againfly.cccbuilder.util;
 
 import java.io.*;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class FileUtil {
+    public static void creatDir(String path){
+        String dirPath = path.substring(0, path.lastIndexOf("/"));
+        File dir = new File(dirPath);
+        if(dir.exists()) return;
+        dir.mkdirs();
+    }
+
+
     public static void fileCopy(String source, String dest) {
+        creatDir(dest);
         InputStream in = null;
         OutputStream out = null;
         try {
@@ -54,16 +62,17 @@ public class FileUtil {
     }
 
     public static void fileWrite(String text, String path){
-        FileWriter fwriter = null;
+        creatDir(path);
+        FileWriter writer = null;
         try {
-            fwriter = new FileWriter(path, false);
-            fwriter.write(text);
+            writer = new FileWriter(path, false);
+            writer.write(text);
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally {
             try {
-                fwriter.flush();
-                fwriter.close();
+                writer.flush();
+                writer.close();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
