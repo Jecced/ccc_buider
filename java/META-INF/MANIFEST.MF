@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: fastjson-1.2.68.jar
-Main-Class: com.againfly.cccbuilder.Main
-
