@@ -80,6 +80,13 @@ public class FileDisplay {
                     .replace("___name___", name.replace(".js", ""))
                     .replace("___abs_path___", absPath);
 
+//            String bot = String.format(
+//                    Main.bot,
+//                    absPath.substring(
+//                            absPath.lastIndexOf("/") + 1,
+//                            absPath.lastIndexOf("."))
+//            );
+
             jsContent = sbTop + jsContent + Main.bot;
 
             jsContent = Utils.displayProperty(jsContent);
@@ -87,10 +94,24 @@ public class FileDisplay {
 
             FileUtil.fileWrite(jsContent, outJsPath);
 
+//            String mapJSONContent = FileUtil.fileRead(js + ".map");
+//            JSONObject mapJSON = JSON.parseObject(mapJSONContent);
+//
+//            String sourceRoot = FileUtil.getRelativePath(
+//                    outJsPath.substring(0, outJsPath.lastIndexOf("/") - 1),
+//                    filePath.substring(0, filePath.lastIndexOf("/") - 1)
+//            );
+//            mapJSON.put("sourceRoot", sourceRoot);
+//            mapJSON.put("sources", newTs.substring(newTs.lastIndexOf("/") + 1));
+//            mapJSON.put("file", "");
+//            FileUtil.fileWrite(JSON.toJSONString(mapJSON), outJsPath + ".map");
+
+
             DepsListener.flushDepsInfo(js);
 
             new File(newTs).delete();
             new File(js).delete();
+            new File(js + ".map").delete();
             new File(newTs.substring(0, newTs.lastIndexOf("/"))).delete();
         }
         System.out.println("->编译完成, 耗时:" + (System.currentTimeMillis() - time) + "ms");

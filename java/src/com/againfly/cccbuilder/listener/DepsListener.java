@@ -42,6 +42,12 @@ public class DepsListener{
     private static List<ScriptDeps> depsList = new CopyOnWriteArrayList<>();
 
     public static void flushCocosSettingsDeps(){
+        //延迟1s进行刷新 否则偶尔会报错
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         nameDepsCache.clear();
         depsList.clear();
 

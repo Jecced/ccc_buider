@@ -55,6 +55,9 @@ public class Utils {
             cmd.append("powershell ");
         }
         cmd.append("tsc ");
+
+//        cmd.append(" --sourcemap --inlineSources ");
+
         for(String path : list){
             cmd.append(path).append(" ");
             outJsList.add(path.substring(0, path.lastIndexOf(".ts")) + ".js");

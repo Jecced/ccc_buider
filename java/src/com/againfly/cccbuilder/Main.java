@@ -40,7 +40,8 @@ public class Main {
             "                __define(__module.exports, __require, __module);\n" +
             "            });\n" +
             "        }\n" +
-            "        })();";
+            "        })();\n" +
+            "//# sourceMappingURL=%s.js.map";
 
     public static void main(String[] args) {
 

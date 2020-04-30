@@ -118,4 +118,50 @@ public class FileUtil {
             files.add(path);
         }
     }
+
+
+
+    public static void main(String[] args){
+        String outJsPath = "/Users/ankang/git/saisheng/slgrpg/temp/quick-scripts/assets/script/feature/battleoverride/BattleCalcComm.js";
+        String filePath = "/Users/ankang/git/saisheng/slgrpg/assets/script/feature/battleoverride/BattleCalcComm.ts";
+
+        String sourceRoot = FileUtil.getRelativePath(
+                outJsPath.substring(0, outJsPath.lastIndexOf("/") - 1),
+                filePath.substring(0, filePath.lastIndexOf("/") - 1)
+        );
+
+        System.out.println(sourceRoot);
+//        String out = getRelativePath(
+//                "/Users/ankang/git/saisheng/slgrpg/temp/quick-scripts/assets/script/feature/battleoverride/BattleCalcComm.js",
+//                "/Users/ankang/git/saisheng/slgrpg/assets/script/feature/battleoverride/BattleCalcComm.ts"
+//        );
+//        System.out.println(out);
+//        System.out.println("../../../../../../assets/script/feature/battleoverride");
+    }
+
+    /**
+     * 从 from 到 to 的相对路径
+     */
+    public static String getRelativePath(String from, String to){
+        String[] fromArr = from.split(File.separator);
+        String[] toArr = to.split(File.separator);
+        int maxLen = Math.max(fromArr.length, toArr.length);
+        int sameLen = 0;
+        for(int i = 0; i < maxLen; i++){
+            if(!fromArr[i].equals(toArr[i])){
+                break;
+            }
+            sameLen++;
+        }
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0 ; i < fromArr.length - sameLen; i ++){
+            sb.append("../");
+        }
+
+        for(int i = 0 ; i < toArr.length - sameLen; i++){
+            sb.append(toArr[i + sameLen]).append("/");
+        }
+        sb.delete(sb.length() - 1, sb.length());
+        return sb.toString();
+    }
 }
