@@ -7,6 +7,7 @@ import (
 	"ccc_builder_go/src/util/ccutil"
 	"ccc_builder_go/src/util/fileutil"
 	"fmt"
+	"log"
 	"strings"
 )
 
@@ -19,7 +20,7 @@ const (
 func jsDispose(task *entity.FileTask) {
 	text, err := fileutil.ReadText(task.TempJs)
 	if err != nil {
-		fmt.Println("读取编译后js文件异常", err.Error())
+		log.Println("读取编译后js文件异常", err.Error())
 		Release(task)
 		return
 	}
@@ -44,6 +45,11 @@ func jsDispose(task *entity.FileTask) {
 	// top信息
 	tsPath := strings.ReplaceAll(task.Ts, config.ListenPath, "")
 	previewScripts := strings.ReplaceAll(task.Js, config.QuickScripts, config.PreviewScripts)
+
+	// TODO 查错
+	//preview-scripts/assets//script/feature/fog_area/script/FogArea.js
+	previewScripts = strings.Replace(previewScripts, "//", "/", -1)
+
 	uuid := ccutil.EncodeByScript(task.Uuid)
 	name := task.Name
 

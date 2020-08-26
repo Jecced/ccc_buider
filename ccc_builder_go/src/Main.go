@@ -13,7 +13,8 @@ var (
 )
 
 func init() {
-	path = "/Users/ankang/develop/projects/cocos/ccc_builder_test/"
+	//path = "/Users/ankang/develop/projects/cocos/ccc_builder_test/"
+	path = "/Users/ankang/saisheng/slgrpg"
 	config.SetProjectPath(path)
 }
 

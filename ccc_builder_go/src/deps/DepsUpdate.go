@@ -2,7 +2,7 @@ package deps
 
 import (
 	"ccc_builder_go/src/util/fileutil"
-	"fmt"
+	"log"
 	"strings"
 )
 
@@ -10,7 +10,7 @@ import (
 func Update(jsPath string) {
 	text, err := fileutil.ReadText(jsPath)
 	if err != nil {
-		fmt.Println("读取js文件失败", jsPath, err.Error())
+		log.Println("读取js文件失败", jsPath, err.Error())
 		return
 	}
 
@@ -41,7 +41,7 @@ func Update(jsPath string) {
 
 	i, has := indexCache[name]
 	if !has {
-		fmt.Println("该脚本当前没有依赖缓存")
+		log.Println("该脚本当前没有依赖缓存")
 		return
 	}
 	// 获取当前依赖信息
@@ -54,12 +54,12 @@ func Update(jsPath string) {
 
 		depsIndex, has2 := indexCache[v[indexStart+1:]]
 		if !has2 {
-			fmt.Println("依赖索引没找到", v)
+			log.Println("依赖索引没找到", v)
 			continue
 		}
 
 		info.Deps[v] = depsIndex
 	}
 
-	fmt.Println("脚本依赖刷新完成", name, info.Deps)
+	log.Println("脚本依赖刷新完成", name, info.Deps)
 }

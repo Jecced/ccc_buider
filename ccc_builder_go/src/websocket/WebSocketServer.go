@@ -3,8 +3,8 @@ package websocket
 import (
 	"ccc_builder_go/src/config"
 	"ccc_builder_go/src/deps"
-	"fmt"
 	"github.com/gorilla/websocket"
+	"log"
 	"strconv"
 	"strings"
 	"time"
@@ -45,15 +45,15 @@ func (wsc *websocketClientManager) dail() {
 	wsUrl := "ws://" + *wsc.addr + "/socket.io/?EIO=3&transport=websocket&sid=" + sid
 	wsc.conn, _, err = websocket.DefaultDialer.Dial(wsUrl, nil)
 	if err != nil {
-		fmt.Println("链接错误", err)
+		log.Println("链接错误", err)
 		go common()
 		return
 	}
 	wsc.isAlive = true
 	wsc.close = false
-	fmt.Printf("connecting to %s 链接成功\n", wsUrl)
+	log.Printf("connecting to %s\n", wsUrl)
 
-	deps.Refresh()
+	go deps.Refresh()
 
 	wsc.sendMsgChan <- "2probe"
 }
@@ -63,10 +63,10 @@ func (wsc *websocketClientManager) sendMsgThread() {
 	go func() {
 		for {
 			msg := <-wsc.sendMsgChan
-			fmt.Printf("send: %s\n", msg)
+			log.Printf("send: %s\n", msg)
 			err := wsc.conn.WriteMessage(websocket.TextMessage, []byte(msg))
 			if err != nil {
-				fmt.Println("write:", err)
+				log.Println("write:", err)
 				continue
 			}
 		}
@@ -85,13 +85,13 @@ func (wsc *websocketClientManager) readMsgThread() {
 			}
 			_, message, err := wsc.conn.ReadMessage()
 			if err != nil {
-				fmt.Println("read close:", err)
+				log.Println("read close:", err)
 				wsc.isAlive = false
 				client.close = true
 				// 出现错误，退出读取，尝试重连
 				break
 			}
-			fmt.Printf("recv: %s\n", message)
+			log.Printf("recv: %s\n", message)
 			recvMsg(&message)
 			// 需要读取数据，不然会阻塞
 			wsc.recvMsgChan <- string(message)
@@ -131,11 +131,13 @@ var (
 
 func ping() {
 	go func() {
-		time.Sleep(time.Duration(25) * time.Second)
-		if client.isAlive == false {
-			return
+		for {
+			time.Sleep(time.Duration(25) * time.Second)
+			if client.isAlive == false {
+				return
+			}
+			client.sendMsgChan <- "2"
 		}
-		client.sendMsgChan <- "2"
 	}()
 }
 
@@ -147,7 +149,7 @@ func recvMsg(byte *[]byte) {
 	//    client.sendMsgChan <- "5"
 	//}
 	if msg == "3probe" {
-		client.sendMsgChan <- "5"
+		//client.sendMsgChan <- "5"
 		return
 	}
 	if -1 != strings.Index(msg, "browser:reload") {

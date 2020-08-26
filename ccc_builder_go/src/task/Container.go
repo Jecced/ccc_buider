@@ -3,7 +3,7 @@ package task
 import (
 	"ccc_builder_go/src/entity"
 	"ccc_builder_go/src/util/fileutil"
-	"fmt"
+	"log"
 )
 
 // 任务容器
@@ -19,7 +19,7 @@ var (
 
 // 增减一个编译任务
 func PushTask(tsPath string) {
-	fmt.Println("新增任务:", tsPath)
+	log.Println("新增任务:", tsPath)
 	if _, has := waitCache[tsPath]; has {
 		return
 	}

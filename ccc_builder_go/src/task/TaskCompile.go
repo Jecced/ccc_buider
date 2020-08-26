@@ -3,7 +3,7 @@ package task
 import (
 	"ccc_builder_go/src/entity"
 	"ccc_builder_go/src/util/fileutil"
-	"fmt"
+	"log"
 	"os/exec"
 )
 
@@ -18,22 +18,22 @@ func compileTasks(tasks []entity.FileTask) {
 // 编译一个任务
 func compileTask(task *entity.FileTask) {
 	if !task.DecodeDone {
-		fmt.Println("未解析成功的任务, 跳过", task.Ts)
+		log.Println("未解析成功的任务, 跳过", task.Ts)
 		return
 	}
 
 	// 拷贝ts到临时目录
 	_, err := fileutil.FileCopy(task.Ts, task.TempTs)
 	if err != nil {
-		fmt.Println(err.Error())
+		log.Println(err.Error())
 		return
 	}
 
-	fmt.Println("开始编译:", task.TempTs)
+	log.Println("开始编译:", task.TempTs)
 	// 执行编译命令
 	command := exec.Command("tsc", task.TempTs, "--sourcemap", "--inlineSources")
 	_ = command.Run()
-	fmt.Println("编译完成:", task.Js)
+	log.Println("编译完成:", task.Js)
 
 	// 处理mapping
 	mappingDispose(task)

@@ -10,7 +10,7 @@ import (
 
 // 依赖请求服务
 func DepsWebServer() {
-	fmt.Println("开启web容器")
+	log.Println("开启web容器")
 	go startUp()
 }
 

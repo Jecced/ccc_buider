@@ -5,14 +5,14 @@ import (
 	"ccc_builder_go/src/util/fileutil"
 	"ccc_builder_go/src/util/jsonutil"
 	"encoding/json"
-	"fmt"
+	"log"
 )
 
 // 处理mapping
 func mappingDispose(task *entity.FileTask) {
 	jsMapJson, err := fileutil.ReadText(task.TempJsMap)
 	if err != nil {
-		fmt.Println(err.Error())
+		log.Println(err.Error())
 		return
 	}
 
@@ -20,7 +20,7 @@ func mappingDispose(task *entity.FileTask) {
 
 	err = jsonutil.Parse(jsMapJson, &tscMap)
 	if err != nil {
-		fmt.Println(err.Error())
+		log.Println(err.Error())
 		return
 	}
 

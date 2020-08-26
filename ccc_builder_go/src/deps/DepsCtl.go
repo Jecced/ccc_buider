@@ -6,7 +6,7 @@ import (
 	"ccc_builder_go/src/util/httputil"
 	"ccc_builder_go/src/util/jsonutil"
 	"encoding/json"
-	"fmt"
+	"log"
 	"strings"
 	"time"
 )
@@ -29,11 +29,11 @@ func GetScriptsDeps() string {
 
 // 刷新cocos依赖信息
 func Refresh() {
-	fmt.Println("刷新cocos依赖信息...")
+	log.Println("刷新cocos依赖信息...")
 	time.Sleep(time.Duration(1) * time.Second)
 	cocosDeps := getByCocosDeps()
 	decodeCocosDeps(cocosDeps)
-	fmt.Println("cocos依赖信息获取完成.")
+	log.Println("cocos依赖信息获取完成.")
 }
 
 // 解析cocos依赖信息
@@ -54,7 +54,7 @@ func decodeCocosDeps(cocosDeps []entity.DepsInfo) {
 func getByCocosDeps() []entity.DepsInfo {
 	str, err := httputil.Get2Str(config.CocosUrl + "settings.js")
 	if err != nil {
-		fmt.Println("settings获取失败", err.Error())
+		log.Println("settings获取失败", err.Error())
 		return []entity.DepsInfo{}
 	}
 
@@ -70,7 +70,7 @@ func getByCocosDeps() []entity.DepsInfo {
 	var arr []entity.DepsInfo
 	err = json.Unmarshal([]byte(str), &arr)
 	if err != nil {
-		fmt.Println("格式化json失败", err.Error())
+		log.Println("格式化json失败", err.Error())
 		return []entity.DepsInfo{}
 	}
 	return arr
