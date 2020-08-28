@@ -25,11 +25,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87b32783-3a63-4b0f-8546-2da584b96acf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ccc_builder_go/src/Main_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ccc_builder_go/src/watch/Watch.go" beforeDir="false" afterPath="$PROJECT_DIR$/../ccc_builder_go/src/watch/Watch.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ccc_builder_go/src/websocket/PreparatoryWork.go" beforeDir="false" afterPath="$PROJECT_DIR$/../ccc_builder_go/src/websocket/PreparatoryWork.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ccc_builder_go/src/websocket/WebSocketServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../ccc_builder_go/src/websocket/WebSocketServer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ccc_builder_go/src/ccsocket/PreparatoryWork.go" beforeDir="false" afterPath="$PROJECT_DIR$/../ccc_builder_go/src/ccsocket/CCSocketWork.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ccc_builder_go/src/entity/FileTask.go" beforeDir="false" afterPath="$PROJECT_DIR$/../ccc_builder_go/src/entity/FileTask.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ccc_builder_go/src/task/Container.go" beforeDir="false" afterPath="$PROJECT_DIR$/../ccc_builder_go/src/task/Container.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ccc_builder_go/src/task/TaskCompile.go" beforeDir="false" afterPath="$PROJECT_DIR$/../ccc_builder_go/src/task/TaskCompile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ccc_builder_go/src/task/TaskDispose.go" beforeDir="false" afterPath="$PROJECT_DIR$/../ccc_builder_go/src/task/TaskDispose.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,17 +161,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -308,6 +297,7 @@
       <workItem from="1598433622663" duration="3436000" />
       <workItem from="1598444755351" duration="1282000" />
       <workItem from="1598491910812" duration="663000" />
+      <workItem from="1598581764615" duration="3178000" />
     </task>
     <servers />
   </component>

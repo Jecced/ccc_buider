@@ -1,5 +1,7 @@
 package entity
 
+import "os/exec"
+
 type FileTask struct {
 	// 等待编译的ts文件
 	Ts string
@@ -29,4 +31,6 @@ type FileTask struct {
 	DecodeDone bool
 	// 是否编译完成
 	CompileDone bool
+	// 命令行
+	Cmd *exec.Cmd
 }

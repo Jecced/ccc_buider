@@ -32,6 +32,9 @@ func compileTask(task *entity.FileTask) {
 	log.Println("开始编译:", task.TempTs)
 	// 执行编译命令
 	command := exec.Command("tsc", task.TempTs, "--sourcemap", "--inlineSources")
+
+	task.Cmd = command
+
 	_ = command.Run()
 	log.Println("编译完成:", task.Js)
 
