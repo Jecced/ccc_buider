@@ -56,7 +56,7 @@ func initTs() {
 
 func scanTs() {
 	for {
-		time.Sleep(time.Duration(2) * time.Second)
+		time.Sleep(time.Duration(1) * time.Second)
 		for i, l := 0, length; i < l; i++ {
 			fileInfo, _ := os.Stat(scripts[i])
 			//修改时间

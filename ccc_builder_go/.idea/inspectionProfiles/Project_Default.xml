@@ -2,6 +2,14 @@
   <profile version="1.0">
     <option name="myName" value="Project Default" />
     <inspection_tool class="GoUnhandledErrorResult" enabled="true" level="WARNING" enabled_by_default="true">
+      <functions>
+        <function importPath="fmt" name="Printf" />
+        <function importPath="fmt" name="Errorf" />
+        <function importPath="math/rand" name="Read" />
+        <function importPath="fmt" name="Println" />
+        <function importPath="fmt" name="Print" />
+        <function importPath="nhooyr.io/websocket" name="Dial" />
+      </functions>
       <methods>
         <method importPath="hash" receiver="Hash" name="Write" />
         <method importPath="strings" receiver="*Builder" name="Write" />
@@ -14,6 +22,7 @@
         <method importPath="strings" receiver="*Builder" name="WriteRune" />
         <method importPath="math/rand" receiver="*Rand" name="Read" />
         <method importPath="io" receiver="ReadCloser" name="Close" />
+        <method importPath="os" receiver="*File" name="Close" />
       </methods>
     </inspection_tool>
   </profile>

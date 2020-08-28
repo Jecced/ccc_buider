@@ -3,7 +3,7 @@ module ccc_builder_go
 go 1.15
 
 require (
+	github.com/Jecced/rs v0.0.0-20200827090843-e3e71331a492
 	github.com/fsnotify/fsnotify v1.4.9
-	github.com/gorilla/websocket v1.4.2
-	github.com/satori/go.uuid v1.2.0 // indirect
+	nhooyr.io/websocket v1.8.6
 )

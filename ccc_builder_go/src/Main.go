@@ -1,11 +1,12 @@
 package main
 
 import (
+	"ccc_builder_go/src/ccsocket"
 	"ccc_builder_go/src/config"
+	"ccc_builder_go/src/deps"
 	"ccc_builder_go/src/task"
 	"ccc_builder_go/src/watch"
 	"ccc_builder_go/src/web"
-	"ccc_builder_go/src/websocket"
 )
 
 var (
@@ -20,7 +21,7 @@ func init() {
 
 func main() {
 	// 刷新cocos依赖信息
-	//deps.Refresh()
+	deps.Refresh()
 	// 监听项目路径
 	watch.CocosDir()
 	// 启动编译任务
@@ -28,7 +29,7 @@ func main() {
 	// 启动依赖服务器
 	web.DepsWebServer()
 	// 启动websocket
-	websocket.RunWebSocket()
+	ccsocket.RunWebSocket()
 
 	select {}
 }
