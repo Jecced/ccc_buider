@@ -8,6 +8,7 @@ import (
 	"github.com/fsnotify/fsnotify"
 	"log"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -35,15 +36,13 @@ var (
 
 func CocosDir() {
 	dir := config.ListenPath
+	// 如果监听目录为/结尾, 则去除
+	if strings.HasSuffix(dir, "/") {
+		dir = dir[:len(dir)-1]
+	}
 	scripts = commutil.GetAllTsFile(dir, scripts)
 	initTs()
 	go scanTs()
-
-	//watch, _ = fsnotify.NewWatcher()
-	////defer watcher.Close()
-	//go observer()
-	//onListener(dir)
-	//fmt.Println("开始监听:", dir)
 }
 
 func initTs() {
@@ -58,7 +57,11 @@ func scanTs() {
 	for {
 		time.Sleep(time.Duration(1) * time.Second)
 		for i, l := 0, length; i < l; i++ {
-			fileInfo, _ := os.Stat(scripts[i])
+			fileInfo, err := os.Stat(scripts[i])
+			if err != nil {
+				log.Println(err.Error())
+				continue
+			}
 			//修改时间
 			modTime := fileInfo.ModTime()
 			v, has := timeCache[scripts[i]]

@@ -2,6 +2,7 @@ package ccsocket
 
 import (
 	"ccc_builder_go/src/config"
+	"ccc_builder_go/src/deps"
 	"ccc_builder_go/src/entity"
 	"ccc_builder_go/src/ws"
 	"encoding/json"
@@ -46,11 +47,19 @@ func ping(c *ws.WebSocketClient) {
 
 func recv(c *ws.WebSocketClient) {
 	for {
-		var msg = <-c.ReadMsg
-		log.Println("server:", msg)
-		if "3probe" == msg {
-			c.Send("5")
-		}
+		dispose(<-c.ReadMsg, c)
+	}
+}
+
+func dispose(msg string, c *ws.WebSocketClient) {
+	log.Println("server <-:", msg)
+	if "3probe" == msg {
+		c.Send("5")
+		return
+	}
+	if -1 != strings.Index(msg, "reload") {
+		go deps.Refresh()
+		return
 	}
 }
 

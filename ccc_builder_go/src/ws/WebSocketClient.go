@@ -55,7 +55,7 @@ func (c *WebSocketClient) Send(msg string) {
 	if !c.IsConn {
 		return
 	}
-	log.Println("client:", msg)
+	log.Println("client ->:", msg)
 	_ = c.Conn.Write(c.ctx, websocket.MessageText, []byte(msg))
 }
 
