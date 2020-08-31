@@ -16,7 +16,11 @@ import (
 
 // websocket 准备工作
 
-var cocosInfo entity.CocosSocketGet0
+var (
+	sid       = ""
+	index     = 0
+	cocosInfo entity.CocosSocketGet0
+)
 
 func RunWebSocket() {
 	get0 := DoGet0()

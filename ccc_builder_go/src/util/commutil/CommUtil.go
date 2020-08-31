@@ -5,6 +5,8 @@ import (
 	"io/ioutil"
 	"math/rand"
 	"os"
+	"os/exec"
+	"runtime"
 	"strings"
 )
 
@@ -67,4 +69,23 @@ func RandomString(len int) string {
 	randBytes := make([]byte, len/2)
 	rand.Read(randBytes)
 	return fmt.Sprintf("%x", randBytes)
+}
+
+// 打开浏览器
+func OpenBrowser(uri string) error {
+	// 不同平台启动指令不同
+	var commands = map[string]string{
+		"windows": "explorer",
+		"darwin":  "open",
+		"linux":   "xdg-open",
+	}
+
+	// runtime.GOOS获取当前平台
+	run, ok := commands[runtime.GOOS]
+	if !ok {
+		return fmt.Errorf("don't know how to open things on %s platform", runtime.GOOS)
+	}
+
+	cmd := exec.Command(run, uri)
+	return cmd.Run()
 }

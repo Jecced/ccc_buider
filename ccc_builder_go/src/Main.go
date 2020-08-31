@@ -6,7 +6,9 @@ import (
 	"ccc_builder_go/src/deps"
 	"ccc_builder_go/src/proxy"
 	"ccc_builder_go/src/task"
+	"ccc_builder_go/src/util/commutil"
 	"ccc_builder_go/src/watch"
+	"fmt"
 )
 
 var (
@@ -30,6 +32,8 @@ func main() {
 	proxy.RunProxy()
 	// 启动websocket
 	ccsocket.RunWebSocket()
+	// 启动浏览器
+	_ = commutil.OpenBrowser(fmt.Sprintf("http://localhost:%d", config.ProxyWebPort))
 
 	select {}
 }
