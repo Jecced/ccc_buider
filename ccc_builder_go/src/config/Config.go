@@ -25,6 +25,8 @@ var (
 	PreviewScripts = "preview-scripts/"
 
 	DepsWebPort = 8059
+
+	ProxyWebPort = 8456
 )
 
 func SetProjectPath(path string) {

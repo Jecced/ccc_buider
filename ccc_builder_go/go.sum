@@ -1,5 +1,7 @@
-github.com/Jecced/rs v1.0.1 h1:uT2QSJ+RITj9gTjjlvy8ZDX3tZeq34NqBkuuiWZsq3w=
-github.com/Jecced/rs v1.0.1/go.mod h1:5oZxfHHCsJ7v3hCgilhWHlZOhWZcBz0Xe5B2DofGkt8=
+github.com/Jecced/rs v1.0.2 h1:PyETVXarOgsKnAZemvSk/pqXl8P9/cV/R+Q5LO3r4C8=
+github.com/Jecced/rs v1.0.2/go.mod h1:5oZxfHHCsJ7v3hCgilhWHlZOhWZcBz0Xe5B2DofGkt8=
+github.com/Jecced/rs v1.0.3 h1:EokSGRo88CF2iWfkuHLlPNj2MFCJeXjDph+4YmvNoak=
+github.com/Jecced/rs v1.0.3/go.mod h1:5oZxfHHCsJ7v3hCgilhWHlZOhWZcBz0Xe5B2DofGkt8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

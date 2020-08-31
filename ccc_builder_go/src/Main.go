@@ -4,9 +4,9 @@ import (
 	"ccc_builder_go/src/ccsocket"
 	"ccc_builder_go/src/config"
 	"ccc_builder_go/src/deps"
+	"ccc_builder_go/src/proxy"
 	"ccc_builder_go/src/task"
 	"ccc_builder_go/src/watch"
-	"ccc_builder_go/src/web"
 )
 
 var (
@@ -26,8 +26,8 @@ func main() {
 	watch.CocosDir()
 	// 启动编译任务
 	task.RunTaskQuartz()
-	// 启动依赖服务器
-	web.DepsWebServer()
+	// 启动反向代理服务器
+	proxy.RunProxy()
 	// 启动websocket
 	ccsocket.RunWebSocket()
 
