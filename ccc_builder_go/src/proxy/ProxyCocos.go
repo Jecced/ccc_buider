@@ -13,7 +13,7 @@ import (
 )
 
 func RunProxy() {
-	log.Println("启动反向代理")
+	log.Printf("启动反向代理, 端口:%d", config.ProxyWebPort)
 	go startUp()
 }
 
@@ -28,11 +28,11 @@ func startUp() {
 
 func settings(w http.ResponseWriter, r *http.Request) {
 
-	body2 := rs.Get(config.CocosUrl + "settings.js").SetHeadTimeOut(30_000).SetTimeOut(30_000).Send().ReadText()
+	settings := rs.Get(config.CocosUrl + "settings.js").Send().ReadText()
 
 	w.Header().Set("Content-Type", "text/javascript;charset=utf-8")
 
-	body := body2 + "\nwindow._CCSettings.scripts = "
+	body := settings + "\nwindow._CCSettings.scripts = "
 	body += deps.GetScriptsDeps()
 	_, _ = fmt.Fprintf(w, body) // 刷写body到Response流
 }

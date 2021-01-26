@@ -10,7 +10,7 @@ import (
 var (
 	CocosPort = 7456
 
-	CocosUrl = "http://localhost:7456/"
+	CocosUrl = fmt.Sprintf("http://localhost:%d/", CocosPort)
 
 	ProjectPath string
 
@@ -24,10 +24,13 @@ var (
 
 	PreviewScripts = "preview-scripts/"
 
-	DepsWebPort = 8059
-
 	ProxyWebPort = 8456
 )
+
+func SetCocosPort(port int) {
+	CocosPort = port
+	CocosUrl = fmt.Sprintf("http://localhost:%d/", CocosPort)
+}
 
 func SetProjectPath(path string) {
 	if strings.HasSuffix(path, "/") || strings.HasSuffix(path, "\\") {
